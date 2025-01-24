@@ -50,8 +50,8 @@ public class Persona extends Object{
         }
 
         // Controlla che il settimo e ottavo carattere siano numeri
-        String settimoOttavo = codice.substring(6, 8);
-        if (!settimoOttavo.matches("^[0-9]{2}$")) {
+        String n7n8 = codice.substring(6, 8);
+        if (!n7n8.matches("^[0-9]{2}$")) {
             throw new IllegalArgumentException("Il settimo e l'ottavo carattere del codiceFiscale fiscale devono essere numeri.");
         }
         this.nome = nome;
@@ -78,7 +78,7 @@ public class Persona extends Object{
     
     /**
      * restituisce una Stringa contenente il nome di una  persona
-     * @return il nome di un oggetto Persona
+     * @return il nome di una Persona
      */
     public String getNome() {
         return nome;
@@ -94,10 +94,8 @@ public class Persona extends Object{
     }
 
     /**
-     * Il metodo stabilisce se due persone sono omonime; Restituisce un booleano: 
-     * VERO se le due persone hanno lo stesso nome (senza distinzione di maiuscole e minuscole) 
-     * altrimenti FALSO
-     * @param p
+     * Il metodo stabilisce se due persone sono omonime; Restituisce un booleano: VERO se le due persone hanno lo stesso nome (senza distinzione di maiuscole e minuscole) altrimenti FALSO
+     * @param p - oggetto Persona
      * @return Vero se le due persone confrontate hanno lo stesso nome, altrimenti falso
      */
     public boolean isOmonimo(Persona p){
@@ -109,8 +107,7 @@ public class Persona extends Object{
     }
 
   /**
-   * Restituisce una rappresentazione testuale di un oggetto Persona, 
-   * nel seguente formato "NOME:xx COGNOME:xx CF:xx"
+   * Restituisce una rappresentazione testuale di un oggetto Persona, nel seguente formato "NOME:xx COGNOME:xx CF:xx"
    * @return  La rappresentazione testuale di un oggetto Persona
    */
   @Override
@@ -118,4 +115,5 @@ public class Persona extends Object{
         String tmp = ":xx";
         return this.nome + tmp + " " + this.cognome + tmp + " " + this.codice + tmp;
     }
+ 
 }
